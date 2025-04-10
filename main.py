@@ -10,16 +10,27 @@ def cargar_tablero(num):
                 guardar = True
                 continue
             if guardar:
-                if line.startswith("Sudoku"):  # siguiente sudoku encontrado
+                if line.startswith("Sudoku"):
                     break
-                tablero.append([int(char) for char in line])  # Convertimos cada número en entero
+                fila = [char if char != "0" else "-" for char in line]
+                tablero.append(fila)
     return tablero
 
-num = input()
+def imprimir_tablero(tablero):
+    for i, fila in enumerate(tablero):
+        fila_con_barras = []
+        for j, val in enumerate(fila):
+            fila_con_barras.append(val)
+            if (j + 1) % 3 == 0 and j < 8:
+                fila_con_barras.append("|")
+        print(" ".join(fila_con_barras))
+        if (i + 1) % 3 == 0 and i < 8:
+            print("═" * 21)
 
-tablero = cargar_tablero(num)
+def recorrer_sudoku(tablero):
+    return True
 
+tablero = cargar_tablero(random.randint(1, 10))
+
+imprimir_tablero(tablero)
 print(tablero)
-
-for fila in tablero:
-    print(" ".join(str(num) for num in fila))
