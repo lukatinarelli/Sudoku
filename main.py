@@ -44,7 +44,7 @@ def solucionar_sudoku(tablero):
                     if comprobar_tablero(tablero, fila, columna, numero):
                         tablero[fila][columna] = f"\033[31m{numero}\033[m"
                         imprimir_tablero(tablero)
-                        #time.sleep(0.3)
+                        time.sleep(0.3)
                         if solucionar_sudoku(tablero):
                             return True
                         tablero[fila][columna] = "-"
