@@ -16,6 +16,7 @@ def cargar_tablero(num):
                 tablero.append(fila)
     return tablero
 
+
 def imprimir_tablero(tablero):
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -35,6 +36,7 @@ def imprimir_tablero(tablero):
         if (i + 1) % 3 == 0 and i < 8:
             print("═" * 6 + "╬" + "═" * 7 + "╬" + "═" * 6)
     print()
+
             
 def solucionar_sudoku(tablero):
     for fila in range(9):
@@ -50,6 +52,7 @@ def solucionar_sudoku(tablero):
                         tablero[fila][columna] = "-"
                 return False
     return True
+
 
 def comprobar_tablero(tablero, fila, columna, numero):
     # Fila
@@ -71,9 +74,7 @@ def comprobar_tablero(tablero, fila, columna, numero):
 
     return True
 
-tablero = cargar_tablero(random.randint(1, 4))
 
-imprimir_tablero(tablero)
-print(tablero)
+tablero = cargar_tablero(random.randint(1, 10))
 
 solucionar_sudoku(tablero)
