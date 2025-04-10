@@ -34,9 +34,7 @@ def imprimir_tablero(tablero):
 
         if (i + 1) % 3 == 0 and i < 8:
             print("═" * 6 + "╬" + "═" * 7 + "╬" + "═" * 6)
-            
     print()
-
             
 def solucionar_sudoku(tablero):
     for fila in range(9):
