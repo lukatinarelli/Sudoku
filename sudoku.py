@@ -75,6 +75,6 @@ def comprobar_tablero(tablero, fila, columna, numero):
     return True
 
 
-#tablero = cargar_tablero(random.randint(1, 10))
+tablero = cargar_tablero(random.randint(1, 10))
 
-#solucionar_sudoku(tablero)
+solucionar_sudoku(tablero)
